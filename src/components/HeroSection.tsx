@@ -1,8 +1,34 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import characterAvatar from "@/assets/character-avatar.jpeg";
+import characterReference from "@/assets/character-reference.webp";
+import { useEffect, useState } from "react";
+import { removeBackground, loadImage } from "@/utils/backgroundRemoval";
 
 const HeroSection = () => {
+  const [processedImageUrl, setProcessedImageUrl] = useState<string>("");
+  
+  useEffect(() => {
+    const processImage = async () => {
+      try {
+        // Load the original image
+        const response = await fetch(characterReference);
+        const blob = await response.blob();
+        const image = await loadImage(blob);
+        
+        // Remove background
+        const processedBlob = await removeBackground(image);
+        const url = URL.createObjectURL(processedBlob);
+        setProcessedImageUrl(url);
+      } catch (error) {
+        console.error('Failed to process image:', error);
+        // Fallback to original image
+        setProcessedImageUrl(characterReference);
+      }
+    };
+    
+    processImage();
+  }, []);
+
   const scrollToAbout = () => {
     document.getElementById('about')?.scrollIntoView({ behavior: 'smooth' });
   };
@@ -14,8 +40,8 @@ const HeroSection = () => {
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Large Background Text */}
-        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-          <h1 className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-black tracking-tighter opacity-10 select-none uppercase whitespace-nowrap">
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
+          <h1 className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tighter opacity-10 select-none uppercase whitespace-nowrap transform scale-x-150">
             HI, I'M AFAAN
           </h1>
         </div>
@@ -24,12 +50,11 @@ const HeroSection = () => {
         <div className="relative flex justify-center items-center min-h-screen">
           <div className="relative z-20">
             <img 
-              src={characterAvatar} 
+              src={processedImageUrl || characterReference} 
               alt="Afaan Character Avatar" 
               className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain animate-float"
               style={{
-                mixBlendMode: 'screen',
-                filter: 'contrast(1.2) brightness(1.1)'
+                filter: 'contrast(1.2) brightness(1.1) drop-shadow(0 0 30px rgba(168, 85, 247, 0.4))'
               }}
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full"></div>
