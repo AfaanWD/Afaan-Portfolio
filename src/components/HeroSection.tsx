@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ChevronDown } from "lucide-react";
-import afaanProfile from "@/assets/afaan-profile.jpeg";
+import characterAvatar from "@/assets/character-avatar.jpeg";
 
 const HeroSection = () => {
   const scrollToAbout = () => {
@@ -12,33 +12,33 @@ const HeroSection = () => {
       {/* Background effects */}
       <div className="absolute inset-0 bg-gradient-to-b from-transparent via-primary/5 to-background"></div>
       
-      <div className="container mx-auto px-4 text-center z-10">
-        {/* Profile Image - Blended with Background */}
-        <div className="mb-8 flex justify-center">
-          <div className="relative">
+      <div className="container mx-auto px-4 relative z-10">
+        {/* Large Background Text */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <h1 className="text-[8rem] md:text-[12rem] lg:text-[16rem] font-black tracking-tighter opacity-10 select-none uppercase whitespace-nowrap">
+            HI, I'M AFAAN
+          </h1>
+        </div>
+        
+        {/* Character Image - Blended with Background */}
+        <div className="relative flex justify-center items-center min-h-screen">
+          <div className="relative z-20">
             <img 
-              src={afaanProfile} 
-              alt="Afaan Imran Profile" 
-              className="w-48 h-48 md:w-72 md:h-72 object-cover animate-float"
+              src={characterAvatar} 
+              alt="Afaan Character Avatar" 
+              className="w-80 h-80 md:w-96 md:h-96 lg:w-[28rem] lg:h-[28rem] object-contain animate-float"
               style={{
-                clipPath: 'polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%)',
-                filter: 'contrast(1.1) brightness(1.1)'
+                mixBlendMode: 'screen',
+                filter: 'contrast(1.2) brightness(1.1)'
               }}
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full"></div>
           </div>
         </div>
 
-        {/* Main Text */}
-        <div className="space-y-6 fade-in">
-          <h1 className="text-hero-sm md:text-hero font-black tracking-tight text-glow uppercase">
-            Hi, I'm{" "}
-            <span className="bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent">
-              Afaan
-            </span>
-          </h1>
-          
-          <p className="text-lg md:text-xl text-muted-foreground max-w-2xl mx-auto font-medium">
+        {/* Main Text Overlay */}
+        <div className="absolute bottom-32 left-0 right-0 text-center z-30 space-y-6 fade-in">
+          <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-bold">
             Passionate about AI | Web Dev & Blockchain Enthusiast
           </p>
           
