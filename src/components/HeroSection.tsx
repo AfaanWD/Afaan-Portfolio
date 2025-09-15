@@ -41,9 +41,14 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Large Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <h1 className="text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[12rem] font-black tracking-tighter opacity-10 select-none uppercase whitespace-nowrap transform scale-x-150">
-            HI, I'M AFAAN
-          </h1>
+          <div className="text-center transform scale-x-150">
+            <h1 className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] font-black tracking-tighter opacity-10 select-none uppercase leading-none">
+              HI, I'M
+            </h1>
+            <h1 className="text-[3rem] sm:text-[4rem] md:text-[5rem] lg:text-[6rem] xl:text-[7rem] font-black tracking-tighter opacity-10 select-none uppercase leading-none">
+              AFAAN
+            </h1>
+          </div>
         </div>
         
         {/* Character Image - Blended with Background */}
@@ -61,10 +66,10 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Main Text Overlay */}
-        <div className="absolute bottom-32 left-0 right-0 text-center z-30 space-y-6 fade-in">
+        {/* Main Text Overlay - Positioned below character */}
+        <div className="absolute bottom-24 left-0 right-0 text-center z-30 space-y-6 fade-in">
           <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-bold">
-            Passionate about AI | Web Dev & Blockchain Enthusiast
+            Passionate about Web Dev & AI
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">

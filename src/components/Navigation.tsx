@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Code2 } from "lucide-react";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -38,8 +38,9 @@ const Navigation = () => {
           {/* Logo */}
           <button 
             onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-            className="text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
+            className="flex items-center gap-2 text-xl font-bold bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent"
           >
+            <Code2 className="w-6 h-6 text-primary" />
             Afaan Imran
           </button>
 
