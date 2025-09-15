@@ -41,12 +41,12 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10">
         {/* Large Background Text */}
         <div className="absolute inset-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <div className="flex items-center justify-center gap-4">
-            <h1 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] font-black tracking-tighter opacity-20 select-none uppercase leading-none">
+          <div className="flex items-center justify-center gap-1">
+            <h1 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] font-black tracking-tighter opacity-40 select-none uppercase leading-none text-glow">
               HI I'M
             </h1>
             <div className="w-80 md:w-96 lg:w-[28rem]"></div>
-            <h1 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] font-black tracking-tighter opacity-20 select-none uppercase leading-none">
+            <h1 className="text-[2rem] sm:text-[3rem] md:text-[4rem] lg:text-[5rem] font-black tracking-tighter opacity-40 select-none uppercase leading-none text-glow">
               AFAAN
             </h1>
           </div>
