@@ -52,7 +52,7 @@ const HeroSection = () => {
         </div>
         
         {/* Character Image - Blended with Background */}
-        <div className="relative flex justify-center items-center min-h-screen">
+        <div className="relative flex justify-center items-center h-screen">
           <div className="relative z-20">
             <img 
               src={processedImageUrl || characterReference} 
@@ -66,8 +66,8 @@ const HeroSection = () => {
           </div>
         </div>
 
-        {/* Main Text Overlay - Positioned below character */}
-        <div className="absolute bottom-24 left-0 right-0 text-center z-30 space-y-6 fade-in">
+        {/* Main Text and Buttons - Below Character */}
+        <div className="relative z-30 text-center space-y-6 fade-in pb-20">
           <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-bold">
             Passionate about Web Dev & AI
           </p>
