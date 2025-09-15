@@ -52,8 +52,8 @@ const HeroSection = () => {
         </div>
         
         {/* Character Image - Blended with Background */}
-        <div className="relative flex justify-center items-center h-screen">
-          <div className="relative z-20">
+        <div className="relative flex flex-col justify-center items-center min-h-screen">
+          <div className="relative z-20 mb-8">
             <img 
               src={processedImageUrl || characterReference} 
               alt="Afaan Character Avatar" 
@@ -64,32 +64,32 @@ const HeroSection = () => {
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent rounded-full"></div>
           </div>
-        </div>
-
-        {/* Main Text and Buttons - Below Character */}
-        <div className="relative z-30 text-center space-y-6 fade-in pb-20">
-          <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-bold">
-            Passionate about Web Dev & AI
-          </p>
           
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
-            <Button 
-              size="lg" 
-              className="btn-glow px-10 py-4 text-lg font-bold rounded-full"
-              onClick={scrollToAbout}
-            >
-              Explore My Work
-            </Button>
-            <Button 
-              variant="outline" 
-              size="lg" 
-              className="px-10 py-4 text-lg font-bold border-2 border-foreground/20 hover:bg-foreground/10 rounded-full"
-              asChild
-            >
-              <a href="/Afaan_Resume.pdf" download>
-                Download Resume
-              </a>
-            </Button>
+          {/* Main Text and Buttons - Just Below Character */}
+          <div className="relative z-30 text-center space-y-6 fade-in">
+            <p className="text-xl md:text-2xl text-foreground max-w-2xl mx-auto font-bold">
+              Passionate about Web Dev & AI
+            </p>
+            
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+              <Button 
+                size="lg" 
+                className="btn-glow px-10 py-4 text-lg font-bold rounded-full"
+                onClick={scrollToAbout}
+              >
+                Explore My Work
+              </Button>
+              <Button 
+                variant="outline" 
+                size="lg" 
+                className="px-10 py-4 text-lg font-bold border-2 border-foreground/20 hover:bg-foreground/10 rounded-full"
+                asChild
+              >
+                <a href="/Afaan_Resume.pdf" download>
+                  Download Resume
+                </a>
+              </Button>
+            </div>
           </div>
         </div>
       </div>
